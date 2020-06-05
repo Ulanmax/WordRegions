@@ -25,7 +25,6 @@ target 'Bekitzur' do
     rx_cocoa
     rx_swift
     cocoaLumberjack
-    pod 'DTTableViewManager', '~> 6.0'
     pod 'IQKeyboardManagerSwift'
     pod 'PKHUD', '~> 5.0'
 

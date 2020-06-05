@@ -4,11 +4,6 @@ PODS:
   - CocoaLumberjack/Swift (3.6.1):
     - CocoaLumberjack/Core
   - Differentiator (4.0.1)
-  - DTModelStorage (7.4.1):
-    - DTModelStorage/Core (= 7.4.1)
-  - DTModelStorage/Core (7.4.1)
-  - DTTableViewManager (6.6.0):
-    - DTModelStorage (~> 7.4.0)
   - IQKeyboardManagerSwift (6.5.5)
   - Nuke (9.0.0)
   - PKHUD (5.3.0)
@@ -37,7 +32,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - CocoaLumberjack/Swift
-  - DTTableViewManager (~> 6.0)
   - IQKeyboardManagerSwift
   - PKHUD (~> 5.0)
   - RxAlamofire
@@ -52,8 +46,6 @@ SPEC REPOS:
     - Alamofire
     - CocoaLumberjack
     - Differentiator
-    - DTModelStorage
-    - DTTableViewManager
     - IQKeyboardManagerSwift
     - Nuke
     - PKHUD
@@ -69,8 +61,6 @@ SPEC CHECKSUMS:
   Alamofire: c1ca147559e730bfb2182c8c7aafbdd90a867987
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  DTModelStorage: 558e0c60bdc0bb5d37ec8f04772f29641183ddb9
-  DTTableViewManager: df3c7fa735d1b8baac3e547d90f5b02221eda72e
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   Nuke: 4390bfb0fcde6aecf314f854439d03914ee7c604
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
@@ -82,6 +72,6 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 44899396049006d33f76a414b94b77a8caa443f2
+PODFILE CHECKSUM: 1ae557eb4ceba8a3168cc3ea6d4529f73fc1164e
 
 COCOAPODS: 1.9.2
