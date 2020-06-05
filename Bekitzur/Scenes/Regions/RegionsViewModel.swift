@@ -14,6 +14,7 @@ final class RegionsViewModel: ViewModelType {
     
     struct Input {
         let trigger: Driver<Void>
+        let searchTrigger: Driver<String>
         let selection: Driver<IndexPath>
     }
     struct Output {
@@ -49,6 +50,12 @@ final class RegionsViewModel: ViewModelType {
                     }
                 }
         
+        let search = Driver.combineLatest(input.searchTrigger, regions).map { (value) -> [RegionTableViewCellModel] in
+            return value.1.filter { (model) -> Bool in
+                model.name.contains(value.0) || value.0 == ""
+            }
+        }
+        
         let selectedRegion = input.selection.withLatestFrom(regions) { (indexPath, regions) -> RegionTableViewCellModel in
                 return regions[indexPath.row]
             }
@@ -61,7 +68,7 @@ final class RegionsViewModel: ViewModelType {
         ).mapToVoid()
         
         return Output(fetching: fetching,
-                      regions: regions,
+                      regions: search,
                       selectedRegion: selectedRegion,
                       error: errors)
     }

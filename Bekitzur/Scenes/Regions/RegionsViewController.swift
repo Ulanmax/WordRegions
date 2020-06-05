@@ -12,10 +12,12 @@ import RxCocoa
 
 class RegionsViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     private let disposeBag = DisposeBag()
     
     var viewModel: RegionsViewModel!
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +39,14 @@ class RegionsViewController: UIViewController {
             .mapToVoid()
             .asDriverOnErrorJustComplete()
         
+        let searchTrigger = searchBar.rx.text.orEmpty
+            .throttle(0.5, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: "")
+        
         let input = RegionsViewModel.Input(
             trigger: viewWillAppear,
+            searchTrigger: searchTrigger,
             selection: tableView.rx.itemSelected.asDriver()
         )
         let output = viewModel.transform(input: input)
