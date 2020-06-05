@@ -74,16 +74,32 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="122.54464285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Region Details View Controller-->
         <scene sceneID="mSI-kS-v7W">
             <objects>
-                <viewController id="EtZ-R5-OJa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegionDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EtZ-R5-OJa" customClass="RegionDetailsViewController" customModule="Bekitzur" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wSc-vW-gHF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Region Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJf-sn-5lL">
+                                <rect key="frame" x="24" y="430" width="366" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lJf-sn-5lL" firstAttribute="centerY" secondItem="wSc-vW-gHF" secondAttribute="centerY" id="28a-Ah-33Q"/>
+                            <constraint firstItem="lJf-sn-5lL" firstAttribute="leading" secondItem="4gN-mF-imE" secondAttribute="leading" constant="24" id="cci-iO-AYl"/>
+                            <constraint firstItem="4gN-mF-imE" firstAttribute="trailing" secondItem="lJf-sn-5lL" secondAttribute="trailing" constant="24" id="l4M-1f-Lgi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4gN-mF-imE"/>
                     </view>
+                    <connections>
+                        <outlet property="labelTitle" destination="lJf-sn-5lL" id="TLu-15-Vxw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mns-Za-9hx" sceneMemberID="firstResponder"/>
             </objects>

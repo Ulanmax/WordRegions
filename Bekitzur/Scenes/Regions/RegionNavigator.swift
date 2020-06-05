@@ -32,10 +32,10 @@ class RegionNavigator {
     }
     
     func toRegionDetails(_ region: RegionModel) {
-//        let viewModel = RegionDetailsViewModel(useCase: services.makeRegionsNetwork(), navigator: self)
-//        let vc = storyBoard.instantiateViewController(ofType: RegionDetailsViewController.self)
-//        vc.viewModel = viewModel
-//        navigationController.pushViewController(vc, animated: true)
+        let viewModel = RegionDetailsViewModel(useCase: services.makeRegionsNetwork(), navigator: self, region: region)
+        let vc = storyBoard.instantiateViewController(ofType: RegionDetailsViewController.self)
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
     }
     
 }
